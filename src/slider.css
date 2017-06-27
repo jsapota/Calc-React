@@ -1,22 +1,22 @@
 .input-range {
-  height: 1rem;
   position: relative;
+  margin-bottom: 20px;
   width: 100%;
-  margin-bottom: 20px; }
+  height: 1rem; }
 
 .input-range__slider {
-  background: #ff3d2e;
-  border: 1px solid #ff3d2e;
-  border-radius: 100%;
-  cursor: pointer;
   display: block;
-  height: 1.2rem;
-  width: 1.2rem;
-  margin-left: -0.5rem;
-  margin-top: -0.65rem;
-  outline: none;
   position: absolute;
   top: 50%;
+  background: #ff3d2e;
+  cursor: pointer;
+  margin-top: -0.65rem;
+  margin-left: -0.5rem;
+  border: 1px solid #ff3d2e;
+  border-radius: 100%;
+  outline: none;
+  width: 1.2rem;
+  height: 1.2rem;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; }
 
 .input-range__slider:active {
@@ -27,16 +27,16 @@
 
 .input-range--disabled .input-range__slider {
   background: #cccccc;
-  border: 1px solid #cccccc;
   box-shadow: none;
+  border: 1px solid #cccccc;
   transform: none; }
 
 .input-range__slider-container {
   transition: left 0.3s ease-out; }
 
 .input-range__label {
-  color: #aaaaaa;
   font-size: 20px;
+  color: #aaaaaa;
   transform: translateZ(0);
   white-space: nowrap; }
 
@@ -57,35 +57,35 @@
   top: 10px;
   font-size: 24px;
   font-weight: 600;
-  text-align: right;
-  color: #ff3d2e; }
+  color: #ff3d2e;
+  text-align: right; }
 
 .input-range__label-container {
-  left: -50%;
-  position: relative; }
+  position: relative;
+  left: -50%; }
 
 .input-range__label--max .input-range__label-container {
   left: 50%; }
 
 .input-range__track {
-  background: #eeeeee;
-  border-radius: 0.3rem;
-  cursor: pointer;
   display: block;
-  height: 0.3rem;
   position: relative;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
-  box-shadow: 0 5px 6px 0 rgba(157, 189, 198, 0.35); }
+  background: #eeeeee;
+  box-shadow: 0 5px 6px 0 rgba(157, 189, 198, 0.35);
+  cursor: pointer;
+  border-radius: 0.3rem;
+  height: 0.3rem;
+  transition: left 0.3s ease-out, width 0.3s ease-out; }
 
 .input-range--disabled .input-range__track {
   background: #eeeeee; }
 
 .input-range__track--background {
-  left: 0;
-  margin-top: -0.15rem;
   position: absolute;
+  top: 50%;
+  left: 0;
   right: 0;
-  top: 50%; }
+  margin-top: -0.15rem; }
 
 .input-range__track--active {
   background: #ff3d2e; }
