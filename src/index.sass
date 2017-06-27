@@ -14,6 +14,7 @@ body
   min-height: 100%
   background-image: $color_header_background
   border-radius: 8px
+  box-shadow: 0 11px 24px 0 rgba(14, 42, 59, 0.25)
 
   .calc-title
     font-size: 24px
@@ -35,12 +36,10 @@ body
   .input-box
     padding: 0 30px 30px 30px
     border-bottom: solid 0.5px #f1f1f1
-
   .bar-title
     text-align: left
     margin: 20px 0
     font-size: 18px
-
   .state-text
     padding-top: 8px
     color: $fontcolor-main
@@ -61,6 +60,7 @@ body
     background: $color--white
     color: $fontcolor--black
     width: 100%
+    box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35)
     .result-text
       padding-top: 8px
       padding-left: 20px
@@ -85,6 +85,7 @@ body
     font-weight: bold
     color: $fontcolor-hover
     background: $color-button--hover
+    box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35)
 
   .btn-calculate
     margin-top: 25px
@@ -101,15 +102,14 @@ body
     &:hover, &:active, &:focus, &:visited
       outline: none
   .silder-buttons
-    background: red
     margin-top: 40px
     width: 100%
     height: 50px
     position: relative
     .arrow
-      background: green
       width: 50px
       height: 50px
+      border: solid 1px #9dbdc6
     .left
       position: absolute
       top: 0
@@ -119,9 +119,16 @@ body
       top: 0
       right: 0
     .middle
+      border: solid 1px #daeaef
       text-align: center
       overflow: auto
-      height: 60px
+      height: 50px
+    .slider-value
+      font-size: 24px
+      font-weight: 600
+      color: #ff3d2e
+      padding-top: 8px
+
 
 
 @media screen and (max-width: 992px)
@@ -142,3 +149,7 @@ body
 @media screen and (min-width: 992px)
   .btn-calculate
     width: 100%
+
+.fa-angle-right, .fa-angle-left
+  padding-top: 8px
+  color: $fontcolor-main

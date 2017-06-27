@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import InputRange from 'react-input-range'
 import './index.css'
-import 'react-input-range/lib/css/index.css'
+import './slider.css'
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,10 @@ class Main extends Component {
     this.state = {
       value: 5000,
       rates: -1,
-      accidentsRate: 1
+      accidentsRate: 1,
+      minValue: 100,
+      maxValue: 10000,
+      step: 10
     }
   }
 
@@ -43,10 +47,8 @@ class Main extends Component {
             <h1 className="calc-title">Kalkulator</h1>
           </div>
         </div>
-
         <div className="row calc-content">
           <div className="col-sm-12">
-
             <div className="row sum">
               <div className="col-sm-12">
                 <p className="bar-title">Suma ubezpieczenia</p>
@@ -55,29 +57,39 @@ class Main extends Component {
                 <div className="row">
                   <div className="col-sm-12">
                     <InputRange
-                      maxValue={10000}
-                      minValue={100}
-                      step={10}
+                      maxValue={this.state.maxValue}
+                      minValue={this.state.minValue}
+                      step={this.state.step}
                       value={this.state.value}
                       onChange={value => this.setState({value})}/>
                   </div>
                   <div className="col-sm-12 visible-xs visible-sm hidden-md silder-buttons">
                     <div className="row">
-
                       <div className="col">
-                        <div className="arrow left">
-
+                        <div className="arrow left" onClick={
+                          () => {
+                            if (this.state.value > this.state.minValue + this.state.step)
+                              this.setState({value: this.state.value - this.state.step});
+                            else
+                              this.setState({value: this.state.minValue});
+                          }}>
+                          <i className="fa fa-angle-left fa-2x"/>
                         </div>
                       </div>
                       <div className="col middle">
-
+                        <p className="slider-value">{this.state.value}</p>
                       </div>
                       <div className="col">
-                        <div className="arrow right">
-
+                        <div className="arrow right" onClick={
+                          () => {
+                            if (this.state.value < this.state.maxValue - this.state.step)
+                              this.setState({value: this.state.value + this.state.step});
+                            else
+                              this.setState({value: this.state.maxValue});
+                          }}>
+                          <i className="fa fa-angle-right fa-2x"/>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -157,7 +169,7 @@ class Main extends Component {
                   </div>
                   <div className="col-sm-12 col-md-4 col-md-offset-4 result-box-margin">
                     <div className="result-box">
-                      <p className="result-text" id="resultField"></p>
+                      <p className="result-text" id="resultField"/>
                     </div>
 
                   </div>
